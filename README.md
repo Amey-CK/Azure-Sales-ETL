@@ -1,14 +1,24 @@
 # Azure-Sales-ETL
-The project covers end to end data engineering pipeline usinf Azure Microsoft and Adventure Works Sales data.The project leverage technologies like leveraging resources like Azure Data Factory, Azure Databricks, Azure Synapse Analytics, and Power BI. The structure of the project follows Medallion Architecture -
+
+This project demonstrates an end-to-end data engineering pipeline built on Microsoft Azure using the AdventureWorks Sales dataset. It follows the Medallion Architecture (Bronze, Silver, Gold) and showcases a modern data platform pipeline by integrating several Azure services.
 ![image](https://github.com/user-attachments/assets/b45b811a-a233-4aa2-9096-835ef8f77803)
 
 The following Azure resources were provisioned:
 
 ### Azure Data Factory (ADF): 
 Used for data orchestration and automation.
+Used for data orchestration and automation.
+Pulls data from GitHub using an HTTP connector.
+Stores raw data in the bronze layer of Azure Data Lake via copy activity.
 ### Azure Storage Account: 
-Acts as the data lake, storing raw (bronze), transformed (silver), and curated (gold) data.
+Serves as the Data Lake.
+Stores data across bronze (raw), silver (cleaned/transformed), and gold (curated) layers.
 ### Azure Databricks: 
-Performs data transformations and computations.
+Handles data transformation and computation.
+Transforms raw data and saves it into the silver layer in Parquet format.
 ### Azure Synapse Analytics: 
-Handles data warehousing for BI use.
+Loads curated (gold layer) structured data using Lakehouse architecture.
+Does not rely on traditional relational databases, but leverages lake storage directly.
+### Business Intelligence Integration 
+Connects to Synapse Analytics.
+Used to visualize insights and create interactive sales dashboards.
