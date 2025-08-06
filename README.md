@@ -7,7 +7,6 @@ The following Azure resources were provisioned:
 
 ### Azure Data Factory (ADF): 
 Used for data orchestration and automation.
-Used for data orchestration and automation.
 Pulls data from GitHub using an HTTP connector.
 Stores raw data in the bronze layer of Azure Data Lake via copy activity.
 ### Azure Storage Account: 
